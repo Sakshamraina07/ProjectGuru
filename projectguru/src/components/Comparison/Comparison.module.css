@@ -1,0 +1,89 @@
+.comparison {
+    background: white;
+    padding: var(--section-padding);
+}
+
+.compareGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.compareCardBad,
+.compareCardGood {
+    padding: 36px;
+    border-radius: 16px;
+    border: 1px solid var(--gray-100);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+}
+
+.compareCardBad {
+    background: var(--gray-50);
+}
+
+.compareCardGood {
+    border-color: var(--primary-100);
+    background: var(--primary-50);
+    box-shadow: var(--shadow-sm);
+}
+
+.compareCardBad:hover,
+.compareCardGood:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.titleBad,
+.titleGood {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titleBad {
+    color: var(--gray-900);
+}
+
+.titleGood {
+    color: var(--primary-700);
+}
+
+.compareCardBad ul,
+.compareCardGood ul {
+    list-style: none;
+    padding: 0;
+}
+
+.itemBad,
+.itemGood {
+    padding: 10px 0;
+    font-size: 15px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    line-height: 1.5;
+}
+
+.iconBad {
+    color: var(--error);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.iconGood {
+    color: var(--success);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+    .compareGrid {
+        grid-template-columns: 1fr;
+    }
+}

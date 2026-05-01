@@ -1,0 +1,130 @@
+.solution {
+    padding: var(--section-padding);
+    background: white;
+}
+
+.solutionContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.solutionText {
+    display: flex;
+    flex-direction: column;
+}
+
+.solutionTitle {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+.solutionPara {
+    font-size: 17px;
+    color: var(--gray-700);
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.solutionList {
+    list-style: none;
+    padding: 0;
+}
+
+.solutionList li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: var(--gray-900);
+    line-height: 1.5;
+}
+
+.checkIcon {
+    flex-shrink: 0;
+    color: var(--success);
+    margin-top: 3px;
+}
+
+.solutionVisual {
+    background: var(--gray-950);
+    padding: 40px;
+    border-radius: 24px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.visualTitle {
+    margin-bottom: 24px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.stepCard {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stepCard:hover {
+    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.stepCard:last-child {
+    margin-bottom: 0;
+}
+
+.stepNum {
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.stepCard h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.stepCard p {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .solutionContent {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

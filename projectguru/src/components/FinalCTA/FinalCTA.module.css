@@ -1,0 +1,67 @@
+.finalCta {
+    background: var(--gray-950);
+    color: white;
+    text-align: center;
+    padding: var(--section-padding);
+    position: relative;
+    overflow: hidden;
+}
+
+.bgPattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 32px 32px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 32px;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+.ctaButton {
+    display: inline-block;
+    background: white;
+    color: var(--primary);
+    padding: 18px 40px;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.miniText {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.9;
+}

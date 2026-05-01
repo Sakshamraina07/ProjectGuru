@@ -1,0 +1,288 @@
+.hero {
+    padding: 140px 0 100px;
+    background-color: var(--white);
+    background-image: 
+        radial-gradient(circle at 2px 2px, var(--gray-200) 1px, transparent 0);
+    background-size: 32px 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heroGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.heroContent {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-dark);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.heroTitle {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--dark);
+    letter-spacing: -1px;
+}
+
+.highlight {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.heroSub {
+    font-size: 19px;
+    color: var(--gray-700);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.heroCtaGroup {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.heroTrust {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.trustAvatars {
+    display: flex;
+}
+
+.trustAvatars div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient);
+    border: 3px solid white;
+    margin-left: -12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.trustAvatars div:first-child {
+    margin-left: 0;
+}
+
+.trustAvatars div:nth-child(2) {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+.trustAvatars div:nth-child(3) {
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+}
+
+.trustAvatars div:nth-child(4) {
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+}
+
+.trustText {
+    font-size: 14px;
+    color: var(--gray-700);
+}
+
+.trustText strong {
+    color: var(--dark);
+}
+
+.stars {
+    color: var(--secondary);
+}
+
+.heroVisual {
+    background: transparent;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.chatWindow {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.chatHeader {
+    background: var(--gray-50);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.chatBody {
+    padding: 20px;
+}
+
+.chatAvatar {
+    width: 40px;
+    height: 40px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+}
+
+.chatInfo h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    color: var(--dark);
+}
+
+.chatInfo p {
+    font-size: 12px;
+    color: var(--success);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.chatInfo p::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--success);
+    border-radius: 50%;
+}
+
+.chatMsgReceived,
+.chatMsgSent {
+    padding: 10px 14px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    max-width: 80%;
+    line-height: 1.5;
+}
+
+.chatMsgReceived {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-bottom-left-radius: 4px;
+    color: var(--gray-900);
+}
+
+.chatMsgSent {
+    background: var(--primary);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+    box-shadow: var(--shadow-sm);
+}
+
+.floatingCardTop,
+.floatingCardBottom {
+    position: absolute;
+    background: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 3;
+}
+
+.floatingCardTop {
+    top: -20px;
+    right: -20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floatingCardBottom {
+    bottom: -20px;
+    left: -20px;
+    animation: float 3s ease-in-out infinite 1.5s;
+}
+
+.floatingIconGreen,
+.floatingIconOrange {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.floatingIconGreen {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--success);
+}
+
+.floatingIconOrange {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--secondary);
+}
+
+@media (max-width: 968px) {
+    .heroGrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

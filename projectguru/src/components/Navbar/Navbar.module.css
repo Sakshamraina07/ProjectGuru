@@ -1,0 +1,131 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    z-index: 1000;
+    padding: 20px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+}
+
+.navWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--dark);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logoDot {
+    color: var(--primary);
+}
+
+.navLinks {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.navLinks a {
+    color: var(--gray-700);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.navLinks a:hover {
+    color: var(--primary);
+}
+
+.navLinks a.btn-primary {
+    color: white;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 2px;
+    background: var(--dark);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.barOpen:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.barOpen:nth-child(2) {
+    opacity: 0;
+}
+
+.barOpen:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navLinks {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .navLinks.mobileOpen {
+        max-height: 400px;
+        padding: 20px;
+    }
+
+    .navLinks a {
+        padding: 14px 0;
+        width: 100%;
+        border-bottom: 1px solid var(--gray-100);
+    }
+
+    .navLinks a:last-child {
+        border-bottom: none;
+        margin-top: 12px;
+    }
+}

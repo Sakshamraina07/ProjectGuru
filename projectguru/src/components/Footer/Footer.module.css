@@ -1,0 +1,115 @@
+.footer {
+    background: var(--gray-950);
+    color: var(--gray-400);
+    padding: 80px 0 40px;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+}
+
+.logoDot {
+    color: var(--primary);
+}
+
+.footerPara {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 16px;
+}
+
+.socialLinks a {
+    color: var(--gray-400);
+    transition: color 0.2s;
+}
+
+.socialLinks a:hover {
+    color: white;
+}
+
+.contactList a {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+}
+
+.footerCol h4 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.footerCol ul {
+    list-style: none;
+}
+
+.footerCol ul li {
+    margin-bottom: 10px;
+}
+
+.footerCol ul a {
+    color: var(--gray-300);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footerCol ul a:hover {
+    color: var(--primary);
+}
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    margin-top: 48px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+}
+
+.builtBadge {
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footerBottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footerGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footerGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,235 @@
+.pricing {
+    background: var(--gray-50);
+    padding: var(--section-padding);
+}
+
+.pricingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.pricingCard,
+.pricingCardPopular {
+    padding: 36px 32px;
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pricingCard {
+    background: white;
+    border: 2px solid var(--gray-100);
+}
+
+.pricingCardPopular {
+    background: var(--dark);
+    color: white;
+    border: 2px solid var(--primary);
+    transform: scale(1.03);
+}
+
+.pricingCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pricingCardPopular:hover {
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.popularTag {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.planHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.planIcon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-50);
+    color: var(--primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pricingCardPopular .planIcon {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.planName {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.planDesc {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-bottom: 24px;
+    min-height: 40px;
+}
+
+.pricingCardPopular .planDesc {
+    color: var(--gray-300);
+}
+
+.price {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.pricingCardPopular .price {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.priceAmount {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.pricePeriod {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: 4px;
+}
+
+.pricingCardPopular .pricePeriod {
+    color: var(--gray-300);
+}
+
+.priceNote {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-top: 8px;
+}
+
+.pricingCardPopular .priceNote {
+    color: var(--gray-300);
+}
+
+.planFeatures {
+    list-style: none;
+    margin-bottom: 28px;
+    padding: 0;
+}
+
+.planFeatures li {
+    padding: 10px 0;
+    font-size: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.5;
+}
+
+.checkMark {
+    color: var(--success);
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.pricingCardPopular .checkMark {
+    color: #6ee7b7;
+}
+
+.btnPlanPrimary,
+.btnPlanOutline,
+.btnPlanWhite {
+    display: block;
+    width: 100%;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btnPlanPrimary {
+    background: var(--gradient);
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btnPlanPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+
+.btnPlanOutline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btnPlanOutline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btnPlanWhite {
+    background: white;
+    color: var(--dark);
+}
+
+.btnPlanWhite:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.consultLine {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--gray-700);
+    font-size: 15px;
+}
+
+.consultLink {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.consultLink:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 968px) {
+    .pricingCardPopular {
+        transform: none;
+    }
+
+    .pricingCardPopular:hover {
+        transform: translateY(-8px);
+    }
+}
