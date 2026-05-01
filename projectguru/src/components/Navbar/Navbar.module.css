@@ -60,7 +60,8 @@
 }
 
 .navLinks a:global(.btn-primary) {
-    color: white;
+    color: white !important;
+    font-weight: 600 !important;
 }
 
 .hamburger {
