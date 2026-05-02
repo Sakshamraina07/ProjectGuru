@@ -5,16 +5,22 @@ export const SITE = {
   description: 'India\'s most trusted final year project mentorship for BTech, BCA, MCA students. 1:1 mentor, viva prep, full support till submission.',
   url: 'https://projectguru.in',
   email: 'hello@projectguru.in',
-  whatsapp: '+91XXXXXXXXXX',
-  phone: '+91XXXXXXXXXX',
+
+  // Telegram Bot (for automated lead capture)
+  telegramBot: 'projectguru07_bot',
+
+  // Personal Telegram (for direct contact, optional)
+  telegramPersonal: 'your_personal_username', // change this if you want
+
+  defaultMessage: 'Hi! I want to book a free consultation for my final year project.',
 };
 
 export const SOCIAL = {
-  github: 'https://github.com/projectguru',
   instagram: 'https://instagram.com/projectguru',
   linkedin: 'https://linkedin.com/company/projectguru',
   youtube: 'https://youtube.com/@projectguru',
   twitter: 'https://twitter.com/projectguru',
+  telegram: `https://t.me/${SITE.telegramBot}`,
 };
 
 export const NAV_LINKS = [
@@ -28,4 +34,10 @@ export const STATS = {
   studentsHelped: '2,000+',
   rating: '4.9/5',
   vivaSuccessRate: '95%',
+};
+
+// Helper: Generate Telegram bot link with a tracking parameter
+// The 'start' parameter helps you track WHERE the lead came from
+export const getTelegramLink = (source = 'website') => {
+  return `https://t.me/${SITE.telegramBot}?start=${source}`;
 };

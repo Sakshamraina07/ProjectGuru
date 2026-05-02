@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { Code, Send, Briefcase, Mail, MessageCircle } from 'lucide-react';
-import { SITE, SOCIAL } from '@/lib/constants';
+import { SITE, SOCIAL, getTelegramLink } from '@/lib/constants';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -14,15 +13,10 @@ export default function Footer() {
             <div className={styles.logo}>
               {SITE.name}<span className={styles.logoDot}>.</span>
             </div>
-            <p className={styles.footerPara}>
+            <p>
               India&apos;s most trusted final year project mentorship service.
               Built by ex-students who know your pain.
             </p>
-            <div className={styles.socialLinks}>
-              <a href={SOCIAL.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Code size={20} /></a>
-              <a href={SOCIAL.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Send size={20} /></a>
-              <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Briefcase size={20} /></a>
-            </div>
           </div>
 
           <div className={styles.footerCol}>
@@ -46,18 +40,28 @@ export default function Footer() {
           </div>
 
           <div className={styles.footerCol}>
-            <h4>Contact</h4>
-            <ul className={styles.contactList}>
+            <h4>Connect</h4>
+            <ul>
               <li>
-                <a href={`https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle size={16} />
-                  <span>WhatsApp Us</span>
+                <a
+                  href={getTelegramLink('footer')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Telegram
                 </a>
               </li>
               <li>
-                <a href={`mailto:${SITE.email}`}>
-                  <Mail size={16} />
-                  <span>{SITE.email}</span>
+                <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              </li>
+              <li>
+                <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn
                 </a>
               </li>
             </ul>
@@ -65,10 +69,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.footerBottom}>
-          <p>© {currentYear} {SITE.name}. All rights reserved.</p>
-          <div className={styles.builtBadge}>
-            Built with ❤️ for Indian Students
-          </div>
+          © {currentYear} {SITE.name}. Made with love for stressed final-year students. All rights reserved.
         </div>
       </div>
     </footer>

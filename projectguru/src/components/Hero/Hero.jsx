@@ -1,5 +1,6 @@
 'use client';
 
+import { getTelegramLink } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
 
@@ -23,10 +24,10 @@ export default function Hero() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }
     }
   };
 
@@ -35,7 +36,7 @@ export default function Hero() {
       <div className="container">
         <div className={styles.heroGrid}>
 
-          <motion.div 
+          <motion.div
             className={styles.heroContent}
             initial="hidden"
             animate="visible"
@@ -55,10 +56,19 @@ export default function Hero() {
             </motion.p>
 
             <motion.div className={styles.heroCtaGroup} variants={itemVariants}>
-              <a href="#pricing" className="btn btn-primary btn-large" onClick={(e) => scrollTo(e, '#pricing')}>
+              <a
+                href={getTelegramLink('hero_cta')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary btn-large"
+              >
                 Book Free Consultation
               </a>
-              <a href="#how-it-works" className="btn btn-secondary btn-large" onClick={(e) => scrollTo(e, '#how-it-works')}>
+              <a
+                href="#how-it-works"
+                className="btn btn-secondary btn-large"
+                onClick={(e) => scrollTo(e, '#how-it-works')}
+              >
                 See How It Works
               </a>
             </motion.div>
@@ -78,7 +88,7 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className={styles.heroVisual}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}

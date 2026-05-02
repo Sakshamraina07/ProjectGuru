@@ -1,5 +1,5 @@
-import * as Icons from 'lucide-react';
 import { pricingPlans } from '@/data/pricing';
+import { getTelegramLink } from '@/lib/constants';
 import styles from './Pricing.module.css';
 
 export default function Pricing() {
@@ -25,49 +25,50 @@ export default function Pricing() {
         </div>
 
         <div className={styles.pricingGrid}>
-          {pricingPlans.map((plan) => {
-            const Icon = Icons[plan.icon];
-            return (
-              <div key={plan.id} className={getCardClass(plan.popular)}>
-                {plan.popular ? (
-                  <span className={styles.popularTag}>{plan.badge}</span>
-                ) : null}
+          {pricingPlans.map((plan) => (
+            <div key={plan.id} className={getCardClass(plan.popular)}>
+              {plan.popular ? (
+                <span className={styles.popularTag}>{plan.badge}</span>
+              ) : null}
 
-                <div className={styles.planHeader}>
-                  <div className={styles.planIcon}>
-                    <Icon size={24} strokeWidth={2} />
-                  </div>
-                  <h3 className={styles.planName}>{plan.name}</h3>
-                </div>
-                
-                <p className={styles.planDesc}>{plan.description}</p>
+              <h3 className={styles.planName}>{plan.name}</h3>
+              <p className={styles.planDesc}>{plan.description}</p>
 
-                <div className={styles.price}>
-                  <div className={styles.priceAmount}>{plan.priceLabel}</div>
-                  <div className={styles.pricePeriod}>{plan.period}</div>
-                  <div className={styles.priceNote}>{plan.note}</div>
-                </div>
-
-                <ul className={styles.planFeatures}>
-                  {plan.features.map((feature, i) => (
-                    <li key={i}>
-                      <Icons.CheckCircle2 size={16} className={styles.checkMark} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a href="#contact" className={getButtonClass(plan)}>
-                  {plan.cta}
-                </a>
+              <div className={styles.price}>
+                <div className={styles.priceAmount}>{plan.priceLabel}</div>
+                <div className={styles.pricePeriod}>{plan.period}</div>
+                <div className={styles.priceNote}>{plan.note}</div>
               </div>
-            );
-          })}
+
+              <ul className={styles.planFeatures}>
+                {plan.features.map((feature, i) => (
+                  <li key={i}>
+                    <span className={styles.checkMark}>✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={getTelegramLink(`pricing_${plan.id}`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={getButtonClass(plan)}
+              >
+                {plan.cta}
+              </a>
+            </div>
+          ))}
         </div>
 
         <p className={styles.consultLine}>
           Confused which plan to pick?{' '}
-          <a href="#contact" className={styles.consultLink}>
+          <a
+            href={getTelegramLink('pricing_consultation')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.consultLink}
+          >
             Book a free 15-min consultation
           </a>
         </p>

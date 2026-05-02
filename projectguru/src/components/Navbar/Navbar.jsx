@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { getTelegramLink } from '@/lib/constants';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -37,7 +38,14 @@ export default function Navbar() {
           <a href="#pricing" onClick={(e) => scrollTo(e, '#pricing')}>Pricing</a>
           <a href="#testimonials" onClick={(e) => scrollTo(e, '#testimonials')}>Reviews</a>
           <a href="#faq" onClick={(e) => scrollTo(e, '#faq')}>FAQ</a>
-          <a href="#pricing" className="btn btn-primary" onClick={(e) => scrollTo(e, '#pricing')}>Get Started</a>
+          <a
+            href={getTelegramLink('navbar_get_started')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
+            Get Started
+          </a>
         </div>
 
         <button
