@@ -50,9 +50,7 @@ export default function Pricing() {
               </ul>
 
               <a
-                href={getTelegramLink(`pricing_${plan.id}`)}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`checkout.html?plan=${plan.name}&price=${plan.price}`}
                 className={getButtonClass(plan)}
               >
                 {plan.cta}
