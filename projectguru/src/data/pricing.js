@@ -11,6 +11,7 @@ export const pricingPlans = [
         popular: false,
         cta: 'Get Started',
         ctaStyle: 'outline',
+        paymentUrl: '/checkout?plan=Basic&price=2999',
         features: [
             'Custom project (your topic or ours)',
             'Complete source code + database',
@@ -34,6 +35,7 @@ export const pricingPlans = [
         badge: 'Most Popular',
         cta: 'Get Started Pro',
         ctaStyle: 'primary',
+        paymentUrl: '/checkout?plan=Pro&price=6999',
         features: [
             'Everything in Basic, plus:',
             'Unlimited live mentor sessions',
@@ -57,6 +59,7 @@ export const pricingPlans = [
         popular: false,
         cta: 'Go Premium',
         ctaStyle: 'outline',
+        paymentUrl: '/checkout?plan=Premium&price=9999',
         features: [
             'Everything in Pro, plus:',
             'Senior mentor (5+ yrs industry)',

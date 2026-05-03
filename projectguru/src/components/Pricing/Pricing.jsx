@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { pricingPlans } from '@/data/pricing';
 import { getTelegramLink } from '@/lib/constants';
 import styles from './Pricing.module.css';
@@ -49,12 +50,23 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a
-                href={`/checkout?plan=${plan.name}&price=${plan.price}`}
-                className={getButtonClass(plan)}
-              >
-                {plan.cta}
-              </a>
+              {plan.paymentUrl.startsWith('http') ? (
+                <a
+                  href={plan.paymentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={getButtonClass(plan)}
+                >
+                  {plan.cta}
+                </a>
+              ) : (
+                <Link
+                  href={plan.paymentUrl}
+                  className={getButtonClass(plan)}
+                >
+                  {plan.cta}
+                </Link>
+              )}
             </div>
           ))}
         </div>
