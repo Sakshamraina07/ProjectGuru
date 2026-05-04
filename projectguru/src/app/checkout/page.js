@@ -25,7 +25,7 @@ function CheckoutContent() {
   const handleRazorpay = () => {
     if (!isFormValid) return alert('Please fill Name, Email and Phone.');
     const options = {
-      key: 'rzp_live_XXXXXXXXXXXXXXX',
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
       amount: priceNum * 100,
       currency: 'INR',
       name: 'ProjectGuru',
